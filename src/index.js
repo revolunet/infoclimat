@@ -97,6 +97,7 @@ const valuesToFrench = data => {
 
 module.exports = {
   default: getWeather,
+  getWeather: getWeather,
   getTodayWeather: getTodayWeather,
   getTodayWeatherInFrench: getTodayWeatherInFrench,
 }
