@@ -1,0 +1,25 @@
+{
+  "name": "infoclimat",
+  "version": "1.0.0",
+  "description": "Query infoclimat.fr API",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "API",
+    "weather",
+    "infoclimat"
+  ],
+  "engines": {
+    "npm": ">6"
+  },
+  "author": "Julien Bouquillon <julien@revolunet.com>",
+  "license": "MIT",
+  "dependencies": {
+    "date-fns": "^1.28.1",
+    "es6-promise": "^4.1.0",
+    "isomorphic-fetch": "^2.2.1",
+    "node-fetch": "^1.6.3"
+  }
+}
