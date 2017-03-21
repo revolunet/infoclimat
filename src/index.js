@@ -7,7 +7,8 @@ const API_CHECKSUM="3822e9feae6d1e97f3f2f6cbe4f2755f"
 
 // raw API call
 const getWeather = location => {
-  const weatherUrl = `http://www.infoclimat.fr/public-api/gfs/json?_ll=${location}&_auth=${API_AUTH}&_c=${API_CHECKSUM}`
+  const protocol = (typeof window !== 'undefined') && window.location.protocol || 'http:'
+  const weatherUrl = `${protocol}//www.infoclimat.fr/public-api/gfs/json?_ll=${location}&_auth=${API_AUTH}&_c=${API_CHECKSUM}`
   return fetch(weatherUrl).then(res => res.json()).catch(e => console.log(e));
 }
 
