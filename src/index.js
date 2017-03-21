@@ -1,4 +1,3 @@
-var fs = require('fs')
 var format = require('date-fns/format');
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
