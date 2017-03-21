@@ -1,8 +1,9 @@
 # infoclimat.fr API <span class="badge-npmversion"><a href="https://npmjs.org/package/infoclimat" title="View this project on NPM"><img src="https://img.shields.io/npm/v/infoclimat.svg" alt="NPM version" /></a></span>
 
 
-Get weather from [infoclimat.fr API](http://www.infoclimat.fr/api-previsions-meteo.html?id=2988507&cntry=FR) with NodeJS or the browser.
+Get weather data from [infoclimat.fr API](http://www.infoclimat.fr/api-previsions-meteo.html?id=2988507&cntry=FR) using NodeJS or your browser.
 
+In-browser example : https://www.webpackbin.com/bins/-KflnHus6k5S01VMYcmO
 
 ## Installation
 
