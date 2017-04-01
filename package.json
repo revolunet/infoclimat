@@ -1,6 +1,6 @@
 {
   "name": "infoclimat",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Query infoclimat.fr API",
   "main": "src/index.js",
   "scripts": {
