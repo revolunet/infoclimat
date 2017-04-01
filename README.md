@@ -14,7 +14,7 @@ In-browser example : https://www.webpackbin.com/bins/-KflnHus6k5S01VMYcmO
 ```js
 var infoclimat = require('infoclimat')
 
-infoclimat.getTodayWeatherInFrench("48.856578,2.351828").then(data => {
+infoclimat.getNextWeatherInFrench("48.856578,2.351828").then(data => {
   // Aujourd'hui à Paris, la température sera de 8 degrés environ. Ca va pluvioter un peu. Vous ne verrez pas le ciel de la journée.
 })
 ```
@@ -56,12 +56,12 @@ result :
 
 see explanations for this values on [infoclimat.fr API](http://www.infoclimat.fr/api-previsions-meteo.html?id=2988507&cntry=FR)
 
-#### getTodayWeather(location)
+#### getNextWeather(location)
 
 > Compute average values for today values
 
 ```js
-infoclimat.getTodayWeather("48.856578,2.351828").then(data => {
+infoclimat.getNextWeather("48.856578,2.351828").then(data => {
   console.log(data);
 })
 ```
@@ -77,12 +77,12 @@ result
 }
 ```
 
-#### getTodayWeatherInFrench(location)
+#### getNextWeatherInFrench(location)
 
 > Create readable French 🇫🇷 text descripting today weather
 
 ```js
-infoclimat.getTodayWeatherInFrench("48.856578,2.351828").then(data => {
+infoclimat.getNextWeatherInFrench("48.856578,2.351828").then(data => {
   console.log(data);
 })
 ```
