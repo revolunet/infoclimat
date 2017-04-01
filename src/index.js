@@ -135,6 +135,6 @@ const valuesToFrench = (data, prefix = "Aujourd'hui") => {
 module.exports = {
   default: getWeather,
   getWeather: getWeather,
-  getNextWeather: getNextWeather;,
+  getNextWeather: getNextWeather,
   getNextWeatherInFrench: getNextWeatherInFrench
 };
