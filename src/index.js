@@ -41,18 +41,16 @@ const isAcceptableData = (data, date) =>
 const getDayValues = date =>
   values => values.filter(v => isAcceptableData(v, date));
 
-const getBasicValues = data => {
-  return {
-    temperature: data.temperature["2m"] - 273.15,
-    pluie: data.pluie,
-    nuages: data.nebulosite.moyenne,
-    vent: data.vent_moyen["10m"]
-  };
-};
+const getBasicValues = data => ({
+  temperature: data.temperature["2m"] - 273.15,
+  pluie: data.pluie,
+  nuages: data.nebulosite.moyenne,
+  vent: data.vent_moyen["10m"]
+});
 
 // filter daily data
 const getDateWeather = (location, date) =>
-  getWeather(location).then(flattenData).then(getDayValues(date));
+  getWeather(location).then(flattenData).then(x => {console.log(x); return x}).then(getDayValues(date));
 
 const getNextWeather = location => {
   let targetDate = new Date();
@@ -74,6 +72,7 @@ const getNextWeatherInFrench = location => {
 
 // compute averages from an array of objects
 const makeAvgs = values => {
+  console.log("values", values)
   const validValues = values.filter(v => !!v);
   const total = validValues.reduce(
     (acc, cur) => {
@@ -97,13 +96,13 @@ const makeAvgs = values => {
 const valuesToFrench = (data, prefix = "Aujourd'hui") => {
   let sentence = `${prefix}, la température sera de ${parseInt(data.temperature, 10)} degrés environ.`;
   let pluie = "";
-  if (data.pluie === 0) {
-    pluie = "Pas de pluie prévue !";
-  }
+  // if (data.pluie === 0) {
+  //   pluie = "Pas de pluie prévue !";
+  // }
   if (data.pluie > 0) {
     pluie = "Ça va pluvioter un peu.";
   }
-  if (data.pluie > 0.3) {
+  if (data.pluie > 0.2) {
     pluie = "Pluies éparses.";
   }
   if (data.pluie > 0.5) {
@@ -113,9 +112,9 @@ const valuesToFrench = (data, prefix = "Aujourd'hui") => {
     pluie = "Pluie continue.";
   }
   let nuages = "";
-  if (data.nuages === 0) {
-    nuages = "Ciel de rêve.";
-  }
+  // if (data.nuages === 0) {
+  //   nuages = "Ciel de rêve.";
+  // }
   if (data.nuages > 0) {
     nuages = "Ciel dégagé.";
   }
